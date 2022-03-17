@@ -205,6 +205,5 @@ tile_data = PoolIntArray( 196608, -1610612735, 0, 262144, -1610612735, 0, 262208
 
 [node name="Camera" parent="." instance=ExtResource( 5 )]
 process_mode = 0
-script = null
 
 [connection signal="body_entered" from="Exit_to_2" to="Exit_to_2" method="_on_Exit_body_entered"]
