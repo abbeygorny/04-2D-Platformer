@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=12]
+
+[sub_resource type="NavigationPolygon" id=5]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -50,6 +52,11 @@ limit_right = 3760
 limit_bottom = 600
 
 [node name="Enemy_Container" type="Node2D" parent="."]
+
+[node name="Navigation2D" type="Navigation2D" parent="Enemy_Container"]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Enemy_Container"]
+navpoly = SubResource( 5 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
