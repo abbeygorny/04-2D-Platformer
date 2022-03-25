@@ -508,6 +508,7 @@ stream = ExtResource( 10 )
 script = ExtResource( 11 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource( 10 )
 margin_left = 3.0
 margin_top = -513.0

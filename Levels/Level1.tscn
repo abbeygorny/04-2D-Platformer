@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/portal_start.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Level 1.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Levels/Music1.gd" type="Script" id=11]
 [ext_resource path="res://Enemy/Enemy_Container.gd" type="Script" id=12]
+[ext_resource path="res://Enemy/Turret.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=8]
 1/name = "candyLand_tileset_v1_1.png 1"
@@ -448,6 +449,8 @@ polygon = PoolVector2Array( 12, -48.7, 23, -35.7, 23, -32.4, 25, -27.9, 25, 27.1
 [node name="Enemy_Container" type="Node2D" parent="."]
 script = ExtResource( 12 )
 
+[node name="Turret" parent="Enemy_Container" instance=ExtResource( 13 )]
+
 [node name="Foreground" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 format = 1
@@ -466,6 +469,7 @@ process_mode = 0
 limit_bottom = 900
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+position = Vector2( -16, 32 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 position = Vector2( -16, -3 )
