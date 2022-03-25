@@ -505,7 +505,6 @@ navpoly = SubResource( 8 )
 
 [node name="Music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-autoplay = true
 script = ExtResource( 11 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
