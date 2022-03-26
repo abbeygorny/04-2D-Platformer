@@ -35,7 +35,7 @@ func _physics_process(_delta):
 					velocity = direction*looking_speed
 			else:
 				velocity = Vector2(0, 0)
-			move_and_slide(velocity, Vector2(0,0))
+			velocity = move_and_slide(velocity, Vector2(0,0))
 		update()
 
 func _draw():
