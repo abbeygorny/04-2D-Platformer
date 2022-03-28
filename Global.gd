@@ -5,7 +5,8 @@ var fade_speed = 0.015
 
 var fade_in = false
 var fade_out = ""
-
+var score = 0
+var health = 100
 var death_zone = 1000
 
 const SAVE_PATH = "res://savegame.txt"

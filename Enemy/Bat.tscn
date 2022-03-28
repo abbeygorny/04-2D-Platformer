@@ -56,6 +56,6 @@ shape = SubResource( 6 )
 position = Vector2( -3, 2 )
 rotation = -0.764454
 enabled = true
-cast_to = Vector2( 0, 500 )
+cast_to = Vector2( 0, 150 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

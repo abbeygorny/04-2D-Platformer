@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var player = null
 onready var ray = $RayCast2D
-export var speed = 350
+export var speed = 200
 export var looking_speed = 25
 var line_of_sight = false
 

@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Jellee-Bold.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 3
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 3
+outline_color = Color( 0.72549, 0.411765, 0.627451, 1 )
+use_mipmaps = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 3
+outline_color = Color( 0.72549, 0.411765, 0.627451, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 3
+outline_color = Color( 0.72549, 0.411765, 0.627451, 1 )
+font_data = ExtResource( 2 )
 
 [node name="Menu" type="Control"]
 pause_mode = 2
@@ -15,7 +36,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.501961 )
+color = Color( 0.796078, 0.447059, 0.670588, 0.501961 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -24,6 +45,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -300.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0.72549, 0.411765, 0.627451, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Game Paused"
 align = 1
 valign = 1
@@ -37,6 +61,7 @@ margin_left = -50.0
 margin_top = -15.0
 margin_right = 50.0
 margin_bottom = 15.0
+custom_fonts/font = SubResource( 2 )
 text = "Save"
 
 [node name="Load" type="Button" parent="."]
@@ -48,6 +73,7 @@ margin_left = -50.0
 margin_top = 35.0
 margin_right = 50.0
 margin_bottom = 65.0
+custom_fonts/font = SubResource( 3 )
 text = "Load"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -62,6 +88,7 @@ margin_left = -50.0
 margin_top = 150.0
 margin_right = 50.0
 margin_bottom = 180.0
+custom_fonts/font = SubResource( 4 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
