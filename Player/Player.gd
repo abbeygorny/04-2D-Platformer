@@ -22,8 +22,9 @@ var moving = false
 var is_jumping = false
 
 
+
 func _ready():
-	pass
+	Global.save_data["health"] = 100
 
 
 func _physics_process(_delta):
@@ -54,6 +55,11 @@ func set_animation(anim):
 	if $AnimatedSprite.animation == anim: return
 	if $AnimatedSprite.frames.has_animation(anim): $AnimatedSprite.play(anim)
 	else: $AnimatedSprite.play()
+
+func damage(d):
+	Global.save_data["health"] -= d
+	if Global.save_data["health"] <= 0:
+		die()
 
 func die():
 	queue_free()
