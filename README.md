@@ -20,6 +20,8 @@ Multiple level system
 Made a main menu
 Changed sprite
 Overall Thematic polish
+Save and Load system
+Track score and health
 
 
 
