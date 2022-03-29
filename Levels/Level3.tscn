@@ -462,7 +462,6 @@ autoplay = true
 script = ExtResource( 11 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 material = SubResource( 9 )
 margin_right = 4284.0
 margin_bottom = 1669.0
