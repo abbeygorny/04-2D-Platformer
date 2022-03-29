@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/portal_start.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://UI/Menu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Jellee-Bold.otf" type="DynamicFontData" id=13]
 [ext_resource path="res://UI/HUD.gd" type="Script" id=14]
+[ext_resource path="res://Levels/Enemy_Container.gd" type="Script" id=15]
+[ext_resource path="res://Candy.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Enemy/Bat.tscn" type="PackedScene" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "candyLand_tileset_v1_1.png 0"
@@ -496,6 +499,7 @@ limit_right = 3760
 limit_bottom = 600
 
 [node name="Enemy_Container" type="Node2D" parent="Player_Container"]
+script = ExtResource( 15 )
 
 [node name="Foreground" type="TileMap" parent="Player_Container"]
 tile_set = SubResource( 2 )
@@ -518,6 +522,7 @@ navpoly = SubResource( 8 )
 
 [node name="Music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+autoplay = true
 script = ExtResource( 11 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -566,6 +571,24 @@ __meta__ = {
 }
 
 [node name="Menu" parent="UI/HUD" instance=ExtResource( 12 )]
+
+[node name="Candy" parent="." instance=ExtResource( 16 )]
+modulate = Color( 0.360784, 0.745098, 1, 1 )
+position = Vector2( 1244, 660 )
+
+[node name="Candy2" parent="." instance=ExtResource( 16 )]
+modulate = Color( 0.360784, 0.745098, 1, 1 )
+position = Vector2( 2686, 693 )
+
+[node name="Candy3" parent="." instance=ExtResource( 16 )]
+modulate = Color( 0.360784, 0.745098, 1, 1 )
+position = Vector2( 656, 698 )
+
+[node name="Candy4" parent="." instance=ExtResource( 16 )]
+modulate = Color( 0.360784, 0.745098, 1, 1 )
+position = Vector2( 1842, 324 )
+
+[node name="Bat" parent="." instance=ExtResource( 17 )]
 
 [connection signal="body_entered" from="Exit_to_3" to="Exit_to_3" method="_on_Exit_body_entered"]
 [connection signal="finished" from="Music2" to="Music2" method="_on_Music2_finished"]

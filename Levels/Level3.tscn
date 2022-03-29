@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/portal_start.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://UI/Menu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Jellee-Bold.otf" type="DynamicFontData" id=13]
 [ext_resource path="res://UI/HUD.gd" type="Script" id=14]
+[ext_resource path="res://Enemy/Enemy_Container.gd" type="Script" id=15]
+[ext_resource path="res://Candy.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Enemy/Bat.tscn" type="PackedScene" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "candyLand_tileset_v1_1.png 0"
@@ -431,6 +434,7 @@ limit_right = 3760
 limit_bottom = 900
 
 [node name="Enemy_Container" type="Node2D" parent="."]
+script = ExtResource( 15 )
 
 [node name="Platform" type="TileMap" parent="."]
 tile_set = SubResource( 5 )
@@ -449,10 +453,12 @@ limit_bottom = 1700
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( 258, 44 )
 navpoly = SubResource( 7 )
 
 [node name="Music3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+autoplay = true
 script = ExtResource( 11 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -496,6 +502,28 @@ __meta__ = {
 }
 
 [node name="Menu" parent="UI/HUD" instance=ExtResource( 12 )]
+
+[node name="Candy" parent="." instance=ExtResource( 16 )]
+modulate = Color( 0.290196, 0.905882, 0.298039, 1 )
+position = Vector2( 687, 1236 )
+
+[node name="Candy2" parent="." instance=ExtResource( 16 )]
+modulate = Color( 0.290196, 0.905882, 0.298039, 1 )
+position = Vector2( 1992, 1283 )
+
+[node name="Candy3" parent="." instance=ExtResource( 16 )]
+modulate = Color( 0.290196, 0.905882, 0.298039, 1 )
+position = Vector2( 2838, 1146 )
+
+[node name="Candy4" parent="." instance=ExtResource( 16 )]
+modulate = Color( 0.290196, 0.905882, 0.298039, 1 )
+position = Vector2( 1167, 1071 )
+
+[node name="Candy5" parent="." instance=ExtResource( 16 )]
+modulate = Color( 0.290196, 0.905882, 0.298039, 1 )
+position = Vector2( 3460, 1264 )
+
+[node name="Bat" parent="." instance=ExtResource( 17 )]
 
 [connection signal="body_entered" from="Exit_to_4" to="Exit_to_4" method="_on_Exit_body_entered"]
 [connection signal="finished" from="Music3" to="Music3" method="_on_Music3_finished"]
