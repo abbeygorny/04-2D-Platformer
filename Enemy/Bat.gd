@@ -45,7 +45,7 @@ func _draw():
 	if points.size() > 1:
 		var prev_point = get_global_position()
 		for p in points:
-			draw_line(p - get_global_position(), prev_point - get_global_position(), c, 2)
+			#draw_line(p - get_global_position(), prev_point - get_global_position(), c, 2)
 			prev_point = p
 
 
