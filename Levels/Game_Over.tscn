@@ -1,14 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Thruster-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Jellee-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Levels/Game_Over.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
+outline_size = 10
+outline_color = Color( 0.968627, 0.701961, 0.94902, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 3
+outline_color = Color( 0.968627, 0.701961, 0.94902, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
+outline_size = 3
+outline_color = Color( 0.968627, 0.701961, 0.94902, 1 )
 font_data = ExtResource( 1 )
 
 [node name="Game_Over" type="Control"]
@@ -24,7 +33,7 @@ margin_left = -44.0
 margin_top = -26.0
 margin_right = 1052.0
 margin_bottom = 642.0
-color = Color( 0.203922, 0.227451, 0.25098, 1 )
+color = Color( 0.972549, 0.752941, 0.905882, 0.619608 )
 
 [node name="Label" type="Label" parent="."]
 margin_right = 1024.0
@@ -42,7 +51,7 @@ margin_right = 612.0
 margin_bottom = 340.0
 focus_neighbour_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Play Again?"
 __meta__ = {
 "_edit_use_anchors_": false

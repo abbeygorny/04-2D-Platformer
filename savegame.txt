@@ -1,1 +1,1 @@
-{"health":100,"level":"res://Levels/Level1.tscn","score":0}
+{"health":100,"level":"res://Levels/Level2.tscn","score":0}

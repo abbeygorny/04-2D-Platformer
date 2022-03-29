@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Assets/portal_start.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Level-2.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Levels/Music2.gd" type="Script" id=11]
 [ext_resource path="res://UI/Menu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Jellee-Bold.otf" type="DynamicFontData" id=13]
+[ext_resource path="res://UI/HUD.gd" type="Script" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "candyLand_tileset_v1_1.png 0"
@@ -445,6 +447,16 @@ shader_param/clip_warp = false
 shader_param/vignette_intensity = 0.4
 shader_param/vignette_opacity = 0.5
 
+[sub_resource type="DynamicFont" id=11]
+outline_size = 2
+outline_color = Color( 0.701961, 0.870588, 0.964706, 1 )
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=12]
+outline_size = 2
+outline_color = Color( 0.701961, 0.870588, 0.964706, 1 )
+font_data = ExtResource( 13 )
+
 [node name="Game" type="Node2D"]
 
 [node name="Background" type="TileMap" parent="."]
@@ -521,7 +533,39 @@ __meta__ = {
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Menu" parent="UI" instance=ExtResource( 12 )]
+[node name="HUD" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 462, 690 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="UI/HUD"]
+margin_left = 2.0
+margin_top = 23.0
+margin_right = 514.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 11 )
+text = "Health: "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="UI/HUD"]
+margin_left = 3.0
+margin_top = 5.0
+margin_right = 43.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 12 )
+text = "Score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" parent="UI/HUD" instance=ExtResource( 12 )]
 
 [connection signal="body_entered" from="Exit_to_3" to="Exit_to_3" method="_on_Exit_body_entered"]
 [connection signal="finished" from="Music2" to="Music2" method="_on_Music2_finished"]
